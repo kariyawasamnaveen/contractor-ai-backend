@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estate Contractor - AI Chat Assistant</title>
+  <link rel="stylesheet" href="/css/chat-widget.css">
+</head>
+<body>
+  <div class="estate-chat-container">
+    <!-- Header -->
+    <div class="estate-chat-header">
+      <div class="estate-header-top">
+        <div class="estate-logo">🏠</div>
+        <div class="estate-header-info">
+          <h2>Estate Contractor</h2>
+          <p>Home Renovation & Waterproofing Experts</p>
+          <div class="estate-status">
+            <div class="estate-status-dot"></div>
+            <span class="estate-status-text">Online - Ready to help!</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="estate-header-actions">
+        <button class="estate-quick-btn" onclick="window.open('tel:6289137586')">
+          📞 Call Us
+        </button>
+        <button class="estate-quick-btn" onclick="window.open('https://wa.me/916289137586', '_blank')">
+          💬 WhatsApp
+        </button>
+      </div>
+    </div>
+    
+    <!-- Messages Area -->
+    <div class="estate-messages-container" id="messagesContainer">
+      <!-- Messages will be inserted here -->
+    </div>
+    
+    <!-- Input Area -->
+    <div class="estate-input-area">
+      <!-- Photo Preview -->
+      <div class="estate-photo-preview" id="photoPreview" style="display: none;">
+        <!-- Photo previews will appear here -->
+      </div>
+      
+      <!-- Input -->
+      <div class="estate-input-wrapper">
+        <div class="estate-input-actions">
+          <label class="estate-input-btn" title="Upload Photo">
+            <input type="file" id="photoInput" accept="image/*" multiple>
+            📷
+          </label>
+        </div>
+        
+        <textarea 
+          id="messageInput" 
+          class="estate-message-input" 
+          placeholder="Type your message here... (Shift+Enter for new line)"
+          rows="1"
+        ></textarea>
+        
+        <button class="estate-send-btn" onclick="sendMessage()" title="Send Message">
+          ➤
+        </button>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="estate-chat-footer">
+      <div class="estate-footer-text">
+        Powered by <strong>Estate Contractor AI</strong> | 📞 62891 37586
+      </div>
+    </div>
+  </div>
+  
+  <script src="/js/chat-widget.js"></script>
+</body>
+</html>
