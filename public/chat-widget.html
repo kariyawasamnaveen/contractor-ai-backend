@@ -1,79 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estate Contractor - AI Chat Assistant</title>
-  <link rel="stylesheet" href="/css/chat-widget.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priya | Estate Contractor AI</title>
+    <link rel="stylesheet" href="css/chat-widget.css">
 </head>
 <body>
-  <div class="estate-chat-container">
-    <!-- Header -->
-    <div class="estate-chat-header">
-      <div class="estate-header-top">
-        <div class="estate-logo">🏠</div>
-        <div class="estate-header-info">
-          <h2>Estate Contractor</h2>
-          <p>Home Renovation & Waterproofing Experts</p>
-          <div class="estate-status">
-            <div class="estate-status-dot"></div>
-            <span class="estate-status-text">Online - Ready to help!</span>
-          </div>
+    <div class="estate-chat-container">
+        <!-- Header -->
+        <header class="estate-chat-header">
+            <div class="header-avatar">🏠</div>
+            <div class="header-info">
+                <h2>Priya</h2>
+                <p>AI Concierge • Online</p>
+            </div>
+        </header>
+
+        <!-- Messages Area -->
+        <div class="estate-messages-container" id="messagesContainer">
+            <!-- Messages will be injected here -->
         </div>
-      </div>
-      
-      <div class="estate-header-actions">
-        <button class="estate-quick-btn" onclick="window.open('tel:6289137586')">
-          📞 Call Us
-        </button>
-        <button class="estate-quick-btn" onclick="window.open('https://wa.me/916289137586', '_blank')">
-          💬 WhatsApp
-        </button>
-      </div>
-    </div>
-    
-    <!-- Messages Area -->
-    <div class="estate-messages-container" id="messagesContainer">
-      <!-- Messages will be inserted here -->
-    </div>
-    
-    <!-- Input Area -->
-    <div class="estate-input-area">
-      <!-- Photo Preview -->
-      <div class="estate-photo-preview" id="photoPreview" style="display: none;">
-        <!-- Photo previews will appear here -->
-      </div>
-      
-      <!-- Input -->
-      <div class="estate-input-wrapper">
-        <div class="estate-input-actions">
-          <label class="estate-input-btn" title="Upload Photo">
-            <input type="file" id="photoInput" accept="image/*" multiple>
-            📷
-          </label>
+
+        <!-- Input Area -->
+        <div class="estate-input-area">
+            <!-- Photo Preview -->
+            <div class="photo-preview-container" id="photoPreview" style="display: none;"></div>
+
+            <div class="input-wrapper">
+                <input type="text" id="messageInput" placeholder="How can I help you today?" autocomplete="off">
+                
+                <input type="file" id="photoInput" accept="image/*" multiple style="display: none;" onchange="handlePhotoSelect(event)">
+                <button class="action-btn photo-btn" onclick="document.getElementById('photoInput').click()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                </button>
+                
+                <button class="action-btn send-btn" id="sendBtn" onclick="sendMessage()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
         </div>
-        
-        <textarea 
-          id="messageInput" 
-          class="estate-message-input" 
-          placeholder="Type your message here... (Shift+Enter for new line)"
-          rows="1"
-        ></textarea>
-        
-        <button class="estate-send-btn" onclick="sendMessage()" title="Send Message">
-          ➤
-        </button>
-      </div>
     </div>
-    
-    <!-- Footer -->
-    <div class="estate-chat-footer">
-      <div class="estate-footer-text">
-        Powered by <strong>Estate Contractor AI</strong> | 📞 62891 37586
-      </div>
-    </div>
-  </div>
-  
-  <script src="/js/chat-widget.js"></script>
+
+    <script src="js/chat-widget.js"></script>
+    <script>
+        // Enter key to send
+        document.getElementById('messageInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
 </body>
 </html>
